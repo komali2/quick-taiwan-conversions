@@ -1,9 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      New in Taiwan?<br />Here are some converters to help you out!<br />
-    </p>
+    <p>New in Taiwan?<br />Here are some converters to help you out!<br /></p>
   </div>
   <div>
     <Currency />
@@ -21,7 +19,7 @@ export default {
   },
   components: {
     Currency,
-  }
+  },
 };
 </script>
 
