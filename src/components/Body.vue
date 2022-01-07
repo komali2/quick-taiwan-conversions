@@ -4,7 +4,9 @@
     <p>New in Taiwan?<br />Here are some converters to help you out!<br /></p>
   </div>
   <div>
-    <Currency />
+    <Currency label="USD - NTD" outputLabel="NTD Equvalent" />
+    <Currency label="MPH - KPH" outputLabel="KPH Equivalent" />
+    <Currency label="F° - C°" outputLabel="Celcius Equivalent" />
   </div>
 </template>
 
@@ -15,6 +17,7 @@ export default {
   name: "Body",
   props: {
     msg: String,
+    label: String,
     convert: Function,
   },
   components: {
