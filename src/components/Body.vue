@@ -23,7 +23,6 @@ export default {
   props: {
     msg: String,
     conFunc: Function,
-    simpleConvert: Function,
   },
   data() {
     return {
