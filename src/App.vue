@@ -1,17 +1,14 @@
 <template>
   <Body msg="Welcome to Caleb and Morgan's .js App" />
-  <Currency />
 </template>
 
 <script>
 import Body from "./components/Body.vue";
-import Currency from "./components/Currency.vue";
 
 export default {
   name: "App",
   components: {
     Body,
-    Currency,
   },
 };
 </script>

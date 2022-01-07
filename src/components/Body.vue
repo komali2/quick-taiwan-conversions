@@ -4,21 +4,36 @@
     <p>New in Taiwan?<br />Here are some converters to help you out!<br /></p>
   </div>
   <div>
-    <Currency />
+    <Converter label="USD - NTD" outputLabel="NTD Equivalent" />
+    <Converter label="MPH - KPH" outputLabel="KPH Equivalent" />
+    <Converter label="F ° - C °" outputLabel="C ° Equivalent" :conFunc="simpleConvert" />
   </div>
 </template>
 
 <script>
-import Currency from "./Currency.vue";
+// eslint-disable-next-line no-unused-vars
+function simpleConvert() {
+  return "it's working!";
+};
+
+import Converter from "./Converter.vue";
 
 export default {
   name: "Body",
   props: {
     msg: String,
-    convert: Function,
+    conFunc: Function,
+    simpleConvert: Function,
+  },
+  data() {
+    return {
+      simpleConvert() {
+        return "it's working"
+      }
+    };
   },
   components: {
-    Currency,
+    Converter,
   },
 };
 </script>
