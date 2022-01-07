@@ -1,13 +1,18 @@
 <template>
   <div id="converter">
-    <input v-model.number="convert" type="number" placeholder="Enter USD" />
-    <p>NTD equivalent: {{ ntdOutput }}</p>
+    <p>{{ label }}</p>
+    <input v-model.number="convert" type="number" placeholder="" />
+    <p>{{ outputLabel }} {{ ntdOutput }}</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "Currency",
+  props: {
+    label: String,
+    outputLabel: String,
+  },
   data() {
     return {
       convert: "",
