@@ -4,17 +4,19 @@
     <p>New in Taiwan?<br />Here are some converters to help you out!<br /></p>
   </div>
   <div>
-    <Converter label="USD - NTD" outputLabel="NTD Equivalent" />
-    <Converter label="MPH - KPH" outputLabel="KPH Equivalent" />
-    <Converter label="F ° - C °" outputLabel="C ° Equivalent" :conFunc="simpleConvert" />
+    <Converter label="USD - NTD" outputLabel="NTD Equivalent" :output="usdConvert" />
+    <Converter label="MPH - KPH" outputLabel="KPH Equivalent" :output="mphConvert" />
+    <Converter label="F ° - C °" outputLabel="C ° Equivalent" :output="fConvert" />
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-vars
-function simpleConvert() {
-  return "it's working!";
+const object = {
+  simpleConvert: function() {
+    return "it's working!";
+  },
 };
+object.simpleConvert();
 
 import Converter from "./Converter.vue";
 
@@ -22,15 +24,23 @@ export default {
   name: "Body",
   props: {
     msg: String,
-    conFunc: Function,
+    ntdOutput: Function,
   },
   data() {
     return {
-      simpleConvert() {
-        return "it's working"
-      }
+      usdConvert(convert) {
+        return Number(convert * 30);
+      },
+      mphConvert(convert) {
+        return Number(convert * 1.6);
+      },
+      fConvert(convert) {
+        if(convert == 0) return Number(0);
+        else return Number(Math.floor((convert - 32) * 5 / 9));
+      },
     };
   },
+
   components: {
     Converter,
   },
