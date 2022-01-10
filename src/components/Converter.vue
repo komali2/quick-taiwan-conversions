@@ -24,7 +24,6 @@ export default {
  
   computed: {
     convertedOutput() {
-      //return this.convert * 30;
       return this.output(this.convert);
     },
   },

@@ -5,19 +5,15 @@
   </div>
   <div>
     <Converter label="USD - NTD" outputLabel="NTD Equivalent" :output="usdConvert" />
+    <Converter label="NTD - USD" outputLabel="NTD Equivalent" :output="ntdConvert" />
     <Converter label="MPH - KPH" outputLabel="KPH Equivalent" :output="mphConvert" />
+    <Converter label="KPH - MPH" outputLabel="KPH Equivalent" :output="kphConvert" />
     <Converter label="F ° - C °" outputLabel="C ° Equivalent" :output="fConvert" />
+    <Converter label="C ° - F °" outputLabel="C ° Equivalent" :output="cConvert" />
   </div>
 </template>
 
 <script>
-const object = {
-  simpleConvert: function() {
-    return "it's working!";
-  },
-};
-object.simpleConvert();
-
 import Converter from "./Converter.vue";
 
 export default {
@@ -29,14 +25,24 @@ export default {
   data() {
     return {
       usdConvert(convert) {
-        return Number(convert * 30);
+        return Number(Math.round(convert * 27.65));
+      },
+      ntdConvert(convert) {
+        return Number((convert * 0.036).toFixed(2));
       },
       mphConvert(convert) {
-        return Number(convert * 1.6);
+        return Number(Math.round(convert * 1.6 * 10) / 10);
+      },
+      kphConvert(convert) {
+        return Number(Math.round(convert * 0.62 * 10) / 10);
       },
       fConvert(convert) {
         if(convert == 0) return Number(0);
-        else return Number(Math.floor((convert - 32) * 5 / 9));
+        else return Number(Math.round((convert - 32) * 5 / 9));
+      },
+      cConvert(convert) {
+        if(convert == 0) return Number(0);
+        else return Number(Math.round((convert *9 / 5) + 32));
       },
     };
   },
