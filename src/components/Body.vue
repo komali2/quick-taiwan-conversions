@@ -4,12 +4,12 @@
     <p>New in Taiwan?<br />Here are some converters to help you out!<br /></p>
   </div>
   <div>
-    <Converter label="USD - NTD" outputLabel="NTD Equivalent" :output="usdConvert" />
-    <Converter label="NTD - USD" outputLabel="NTD Equivalent" :output="ntdConvert" />
-    <Converter label="MPH - KPH" outputLabel="KPH Equivalent" :output="mphConvert" />
-    <Converter label="KPH - MPH" outputLabel="KPH Equivalent" :output="kphConvert" />
-    <Converter label="F ° - C °" outputLabel="C ° Equivalent" :output="fConvert" />
-    <Converter label="C ° - F °" outputLabel="C ° Equivalent" :output="cConvert" />
+    <Converter label="USD - NTD" outputLabel="NTD Equivalent" :output="usdConvert" enterVal="Enter USD" />
+    <Converter label="NTD - USD" outputLabel="USD Equivalent" :output="ntdConvert" enterVal="Enter NTD" />
+    <Converter label="MPH - KPH" outputLabel="KPH Equivalent" :output="mphConvert" enterVal="Enter MPH" />
+    <Converter label="KPH - MPH" outputLabel="MPH Equivalent" :output="kphConvert" enterVal="Enter KPH" />
+    <Converter label="F ° - C °" outputLabel="C ° Equivalent" :output="fConvert" enterVal="Enter Degrees F" />
+    <Converter label="C ° - F °" outputLabel="F ° Equivalent" :output="cConvert" enterVal="Enter Degrees C" />
   </div>
 </template>
 
@@ -20,7 +20,6 @@ export default {
   name: "Body",
   props: {
     msg: String,
-    ntdOutput: Function,
   },
   data() {
     return {
@@ -37,11 +36,11 @@ export default {
         return Number(Math.round(convert * 0.62 * 10) / 10);
       },
       fConvert(convert) {
-        if(convert == 0) return Number(0);
+        if(Number(convert) === 0) return Number(0);
         else return Number(Math.round((convert - 32) * 5 / 9));
       },
       cConvert(convert) {
-        if(convert == 0) return Number(0);
+        if(Number(convert) === 0) return Number(0);
         else return Number(Math.round((convert *9 / 5) + 32));
       },
     };

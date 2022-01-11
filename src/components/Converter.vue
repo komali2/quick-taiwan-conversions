@@ -1,7 +1,7 @@
 <template>
   <div id="converter">
     <p>{{ label }}</p>
-    <input v-model.number="convert" type="number" placeholder="Enter USD" />
+    <input v-model.number="convert" type="number" :placeholder="enterVal" />
     <p>{{ outputLabel }} {{ convertedOutput }}</p>
   </div>
   <div>
@@ -14,6 +14,7 @@ export default {
   props: {
     label: String,
     outputLabel: String,
+    enterVal: String,
     output: Function,
   },
   data() {
