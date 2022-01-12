@@ -105,12 +105,12 @@
     </div>
   </div>
   <div id="footer">
-    <p id="info">This site was designed by two Americans living in 
-      Taiwan who wanted a Taiwan-specific converter with all the 
-      common units in one place. The content choice reflects the 
-      ppologies to folks from other countries, but your measuring
-      system is probably better anyway. :)
-      </p>
+    <p id="info">
+      This site was designed by two Americans living in Taiwan who wanted a
+      Taiwan-specific converter with all the common units in one place. The
+      content choice reflects the ppologies to folks from other countries, but
+      your measuring system is probably better anyway. :)
+    </p>
   </div>
 </template>
 
@@ -157,10 +157,10 @@ export default {
         return Number(Math.round(convert * 35.57472392722561 * 10) / 10);
       },
       usdgalConvert(convert) {
-        return Number(Math.round(convert / 3.785411784 * 27.67 * 10) / 10);
+        return Number(Math.round((convert / 3.785411784) * 27.67 * 10) / 10);
       },
       ntdlConvert(convert) {
-        return Number((convert * 3.785411784 / 27.67).toFixed(2));
+        return Number(((convert * 3.785411784) / 27.67).toFixed(2));
       },
     };
   },
@@ -185,7 +185,6 @@ h1 {
   padding-top: 25px;
 }
 h2 {
-
   color: #000;
   margin: auto;
   padding-bottom: 30px;
@@ -207,11 +206,13 @@ h2 {
   color: #fff;
 }
 @media (min-width: 550px) {
-  #converters { grid-template-columns: repeat(2, 1fr);
+  #converters {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1100px) {
-  #converters { grid-template-columns: repeat(4, 1fr);
+  #converters {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 #footer {
