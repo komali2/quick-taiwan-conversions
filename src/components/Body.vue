@@ -70,7 +70,47 @@
           enterVal="Enter Millimeters"
         />
       </div>
+      <div>
+        <Converter
+          label="Sq-ft - Ping"
+          outputLabel="Ping Equivalent"
+          :output="sqftConvert"
+          enterVal="Enter Sq-ft"
+        />
+      </div>
+      <div>
+        <Converter
+          label="Ping - Sq-ft"
+          outputLabel="Sq-ft Equivalent"
+          :output="pingConvert"
+          enterVal="Enter Ping"
+        />
+      </div>
+      <div>
+        <Converter
+          label="$Gas USD/G - NTD/L"
+          outputLabel="NTD/L Equivalent"
+          :output="usdgalConvert"
+          enterVal="Enter USD of 1 G"
+        />
+      </div>
+      <div>
+        <Converter
+          label="$Gas NTD/L - USD/G"
+          outputLabel="USD/G Equivalent"
+          :output="ntdlConvert"
+          enterVal="Enter NTD of 1 L"
+        />
+      </div>
     </div>
+  </div>
+  <div id="footer">
+    <p id="info">This site was designed by two Americans living in 
+      Taiwan who wanted a Taiwan-specific converter with all the 
+      common units in one place. The content choice reflects the 
+      ppologies to folks from other countries, but your measuring
+      system is probably better anyway. :)
+      </p>
   </div>
 </template>
 
@@ -110,6 +150,18 @@ export default {
       mmConvert(convert) {
         return Number(Math.round(convert * 0.03937007874015748 * 1000) / 1000);
       },
+      sqftConvert(convert) {
+        return Number(Math.round(convert * 0.028109845688351 * 10) / 10);
+      },
+      pingConvert(convert) {
+        return Number(Math.round(convert * 35.57472392722561 * 10) / 10);
+      },
+      usdgalConvert(convert) {
+        return Number(Math.round(convert / 3.785411784 * 27.67 * 10) / 10);
+      },
+      ntdlConvert(convert) {
+        return Number((convert * 3.785411784 / 27.67).toFixed(2));
+      },
     };
   },
   components: {
@@ -120,26 +172,58 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#heading {
+  background-color: rgba(255, 255, 255, 0.65);
+  width: 80vw;
+  margin: auto;
+  color: #000;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
 h1 {
-  padding-top: 50px;
+  margin: auto;
+  padding-top: 25px;
 }
 h2 {
+
+  color: #000;
+  margin: auto;
   padding-bottom: 30px;
 }
 #content {
-  padding-bottom: 100px;
+  padding-bottom: 0;
 }
 #converters {
-  width: 500px;
+  width: 80vw;
   margin: auto;
   display: grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 1em 1em;
   justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: rgba(84, 147, 240, 0.75);
-  border: 3px solid #383;
-  border-radius: 20px;
+  padding-top: 30px;
+  padding-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  border: 3px solid #fff;
+  color: #fff;
+}
+@media (min-width: 550px) {
+  #converters { grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  #converters { grid-template-columns: repeat(4, 1fr);
+  }
+}
+#footer {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 80vw;
+  min-height: 150px;
+  margin: auto;
+  color: #000;
+  border-left: 3px solid #fff;
+  border-right: 3px solid #fff;
+}
+#info {
+  padding: 20px;
 }
 </style>

@@ -32,16 +32,23 @@ export default {
  
 <style scoped>
 #converter {
+  height: 150px;
   padding: 10px;
 }
 input {
+  background-color: #eee;
   display: flex;
   width: 80%;
   margin: auto;
   padding: 10px 14px;
-  border: 3px solid #383;
-  border-radius: 7px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
   font-size: 14pt;
+}
+input:focus {
+  background-color: #fff;
+  padding: 10.5px 14px;
+  margin: #fff;
 }
 p {
   font-size: 14pt;
