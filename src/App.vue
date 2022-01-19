@@ -14,12 +14,21 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
 #app {
+  background-image: url("assets/quick-taiwan-conversions-background.jpg");
+  background-size: cover;
+  filter: grayscale(40%);
+  min-height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #000;
+  margin: 0;
+  box-sizing: border-box;
 }
 </style>
