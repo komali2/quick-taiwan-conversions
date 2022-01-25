@@ -27,3 +27,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Netlify URL
+
+Currently the netlify URL is
+https://festive-davinci-f849aa.netlify.app
+
+We need to change over the .tw domain when it's available.
