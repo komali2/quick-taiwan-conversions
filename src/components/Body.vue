@@ -106,10 +106,13 @@
   </div>
   <div id="footer">
     <p id="info">
-      This site was designed by two Americans living in Taiwan who wanted a
-      Taiwan-specific converter with all the common units in one place. The
-      content choice reflects American's needs - appologies to folks from 
-      other countries, but your measuring system is probably better anyway. :)
+      This site was designed by Caleb Rogers and Morgan Elliot, two American 
+      software engineers living in Taiwan.<br>We wanted a 
+      Taiwan-specific converter with all the common units in one place. 
+      If you would like to request that we add functionality, please reach out. 
+      We can be contacted through our websites linked below.
+      <br><br>More information about <a href="https://calebjay.com/"><strong>Caleb</strong></a> 
+      and <a href="https://a11yengineering.wixsite.com/morgan"><strong>Morgan</strong></a>.
     </p>
   </div>
 </template>
